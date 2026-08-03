@@ -93,8 +93,20 @@
 
   /* ---------- Dark band ---------- */
   .band{background:var(--purple-deep);color:var(--cream);position:relative;}
-  .band .wave-top{position:absolute;top:-1px;left:0;width:100%;transform:rotate(180deg);height:var(--wave-h);line-height:0;}
-  .band-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:60px 0;}
+  /*.band .wave-top{position:absolute;top:-1px;left:0;width:100%;transform:rotate(180deg);height:var(--wave-h);line-height:0;}*/
+  .band .wave-top{
+    position:absolute;
+    z-index:1;
+  }
+  /*.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:60px 0;}*/
+  .band-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    padding:120px 0 60px;
+    position:relative;
+    z-index:2;
+  }
   .band-grid h3{color:var(--green-leaf);font-size:1.3rem;margin-bottom:14px;}
   .band-grid p{line-height:1.65;opacity:.92;}
 

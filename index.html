@@ -33,16 +33,22 @@
   .hero{background:var(--purple-deep);color:var(--cream);position:relative;overflow:hidden;padding:56px 0 calc(var(--wave-h) + 40px);}
   .hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;}
   .brand{display:flex;align-items:center;gap:14px;margin-bottom:36px;}
-  .brand .leaf-mark{width:52px;height:52px;border-radius:50%;border:3px solid var(--green-leaf);display:flex;align-items:center;justify-content:center;}
-  .brand-name{font-size:1.5rem;font-weight:700;letter-spacing:.02em;color:var(--green-leaf);}
+  .brand .leaf-mark{width:52px;height:52px;border-radius:50%;border:3px solid var(--green-leaf);display:flex;align-items:center;justify-content:center;flex:none;}
+  .brand-text{display:flex;flex-direction:column;}
+  .brand-name{font-size:1.5rem;font-weight:700;letter-spacing:.02em;color:var(--green-leaf);line-height:1.1;}
+  .brand-tagline{font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--cream);opacity:.8;margin-top:2px;}
   .hero-tagline{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.15;margin-bottom:18px;}
   .hero-tagline .accent{color:var(--green-leaf);}
   .hero-subtitle{font-size:1.25rem;opacity:.9;margin-bottom:28px;}
   .hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--green-leaf);color:var(--purple-deep);font-family:'Fredoka',sans-serif;font-weight:600;padding:14px 28px;border-radius:999px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease;}
   .hero-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25);}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .whatsapp-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--cream);border:2px solid var(--green-leaf);font-family:'Fredoka',sans-serif;font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:999px;text-decoration:none;transition:background .15s ease,transform .15s ease;}
+  .whatsapp-btn:hover{background:rgba(139,197,63,.15);transform:translateY(-2px);}
+  .whatsapp-btn svg{width:18px;height:18px;flex:none;}
+  .whatsapp-caption{font-size:.82rem;color:var(--cream);opacity:.75;margin:10px 0 0;max-width:340px;}
   .hero-image-wrap{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#5c2f8c,#3a1c5c);display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.35);}
   .hero-image-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
-  .badge-forall{position:absolute;bottom:-18px;right:-18px;background:var(--green-leaf);color:var(--purple-deep);width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.78rem;line-height:1.25;box-shadow:0 10px 24px rgba(0,0,0,.3);transform:rotate(-8deg);white-space:pre-line;}
   .wave{position:absolute;left:0;bottom:-1px;width:100%;height:var(--wave-h);line-height:0;}
   .wave svg{width:100%;height:100%;display:block;}
 
@@ -51,6 +57,22 @@
   .section-heading{font-size:2rem;text-align:center;margin-bottom:8px;}
   .section-kicker{display:block;text-align:center;font-family:'Fredoka',sans-serif;font-weight:600;color:var(--purple-mid);text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;margin-bottom:10px;}
   .intro-text{max-width:640px;margin:18px auto 0;text-align:center;font-size:1.1rem;line-height:1.6;color:#4a3560;}
+  .menu-date{text-align:center;font-size:.9rem;color:#8a6aa8;margin:6px 0 0;}
+
+  /* ---------- Announcement (optional) ---------- */
+  .announcement-section{padding:36px 0 0;display:none;}
+  .announcement-card{
+    display:flex; background:#fff; border-radius:22px; overflow:hidden;
+    box-shadow:0 12px 30px rgba(74,36,114,.15); border:2px solid #f1e3f9;
+  }
+  .announcement-card img{flex:0 0 38%;width:38%;object-fit:cover;display:block;background:#eee0f5;}
+  .announcement-body{padding:24px 28px;flex:1;}
+  .announcement-body h3{color:var(--purple-mid);font-size:1.2rem;margin-bottom:8px;}
+  .announcement-body p{margin:0;color:#4a3560;line-height:1.6;}
+  @media (max-width:700px){
+    .announcement-card{flex-direction:column;}
+    .announcement-card img{width:100%;flex-basis:auto;aspect-ratio:16/9;}
+  }
 
   /* ---------- Daily menu carousel ---------- */
   .menu-section{padding-top:40px;padding-bottom:24px;}
@@ -150,6 +172,7 @@
     .band-grid{grid-template-columns:1fr;padding:48px 0;}
     .location-grid{grid-template-columns:1fr;padding:48px 0 24px;}
     .menu-card{flex-basis:82%;}
+    .hero-actions{justify-content:center;}
   }
 </style>
 </head>
@@ -162,28 +185,49 @@
     <div>
       <div class="brand">
         <span class="leaf-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#8BC53F" stroke-width="2" width="26" height="26"><path d="M5 12c0-4 3-7 7-7 4 0 7 3 7 7-4 0-7-3-7-7 0 4-3 7-7 7z"/></svg></span>
-        <span class="brand-name">FAIR&amp;FREI</span>
+        <span class="brand-text">
+          <span class="brand-name">FAIR&amp;FREI</span>
+          <span class="brand-tagline" id="brand_tagline">Bio-Café</span>
+        </span>
       </div>
       <h1 class="hero-tagline"><span id="hero_tagline_1">Du entscheidest,</span><br><span class="accent" id="hero_tagline_2">was es dir wert ist.</span></h1>
       <p class="hero-subtitle" id="hero_subtitle">Bio. Regional. Mit Herz.</p>
-      <a class="hero-cta" href="#finden">
-        <span id="hero_cta">Komm vorbei</span>
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      <div class="hero-actions">
+        <a class="hero-cta" href="#finden">
+          <span id="hero_cta">Komm vorbei</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="whatsapp-btn" id="whatsapp-btn" href="https://chat.whatsapp.com/KEG9UjIH6K86WVswrEtpsH" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5C10.2 9 9.7 7.8 9.5 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.3-.5-4.6-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.6-8.6 8.6z"/></svg>
+          <span id="whatsapp_label">WhatsApp-Gruppe</span>
+        </a>
+      </div>
+      <p class="whatsapp-caption" id="whatsapp_caption">Erfahre als Erste(r) von Schließtagen &amp; neuem Menü</p>
     </div>
     <div class="hero-image-wrap">
       <img src="/images/hero-bowl.jpg" alt="Bio-Bowl im Fair&Frei Café" onerror="this.remove();">
-      <div class="badge-forall" id="hero_badge">FÜR ALLE
-unabhängig vom Geldbeutel</div>
     </div>
   </div>
   <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="#FBF6EC"/></svg></div>
+</section>
+
+<section class="section announcement-section" id="announcement-section">
+  <div class="wrap">
+    <div class="announcement-card">
+      <img id="announcement-image" src="" alt="" onerror="this.remove();">
+      <div class="announcement-body">
+        <h3 id="announcement-title"></h3>
+        <p id="announcement-text"></p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section menu-section">
   <div class="wrap">
     <span class="section-kicker" id="menu_kicker">Heute bei uns</span>
     <h2 class="section-heading" id="menu_title">Unser Angebot</h2>
+    <p class="menu-date" id="menu-date" style="display:none;"></p>
   </div>
   <div class="carousel-track" id="carousel-track"></div>
   <div class="carousel-dots" id="carousel-dots"></div>
@@ -279,10 +323,11 @@ unabhängig vom Geldbeutel</div>
 
 <script>
 (function(){
-  const SLOT_COUNT = 3;
+  const MENU_SLOTS = 5;
   let currentLang = 'de';
   let siteData = null;
-  let slidesData = []; // [{de,en,altDe,altEn,imgOk}]
+  let menuItems = [];      // parsed from content/menu.txt
+  let announcement = null; // parsed from content/announcement.txt
 
   // ---------- Zauberbox ----------
   const box = document.getElementById('zauberbox');
@@ -297,11 +342,13 @@ unabhängig vom Geldbeutel</div>
     const setText = (id, val) => { const el = document.getElementById(id); if(el && val !== undefined) el.textContent = val; };
     document.getElementById('html-root').lang = currentLang;
     document.getElementById('lang-toggle').textContent = d.lang_label;
+    setText('brand_tagline', d.brand_tagline);
     setText('hero_tagline_1', d.hero_tagline_1);
     setText('hero_tagline_2', d.hero_tagline_2);
     setText('hero_subtitle', d.hero_subtitle);
     setText('hero_cta', d.hero_cta);
-    document.getElementById('hero_badge').textContent = d.hero_badge;
+    setText('whatsapp_label', d.whatsapp_label);
+    setText('whatsapp_caption', d.whatsapp_caption);
     setText('menu_kicker', d.menu_kicker);
     setText('menu_title', d.menu_title);
     setText('swipe-hint', d.menu_swipe_hint);
@@ -329,10 +376,22 @@ unabhängig vom Geldbeutel</div>
     setText('footer_text', d.footer_text);
     setText('footer_signature', d.footer_signature);
 
+    if(siteData.whatsapp_url){
+      document.getElementById('whatsapp-btn').href = siteData.whatsapp_url;
+    }
+
+    // Werte list — built with DOM methods, not innerHTML, so text is always safe
     if(Array.isArray(d.werte_items)){
-      document.getElementById('werte_list').innerHTML = d.werte_items.map(item =>
-        `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>${item}</span></li>`
-      ).join('');
+      const list = document.getElementById('werte_list');
+      list.textContent = '';
+      d.werte_items.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>';
+        const span = document.createElement('span');
+        span.textContent = item;
+        li.appendChild(span);
+        list.appendChild(li);
+      });
     }
     if(Array.isArray(d.steps)){
       const cards = document.querySelectorAll('#steps-grid .step-card');
@@ -344,6 +403,7 @@ unabhängig vom Geldbeutel</div>
       });
     }
     renderCarousel();
+    renderAnnouncement();
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => {
@@ -356,32 +416,71 @@ unabhängig vom Geldbeutel</div>
     .then(data => { if(data){ siteData = data; applyStaticLang(); } })
     .catch(() => {});
 
-  // ---------- Daily menu carousel ----------
+  // ---------- Shared: parse a "--- LABEL N ---" block-style text file ----------
   function fetchText(path){
     return fetch(path, {cache:'no-store'})
       .then(r => r.ok ? r.text() : '')
-      .then(t => t.trim())
       .catch(() => '');
   }
+  function getField(block, label){
+    const re = new RegExp('^\\s*' + label + '\\s*:\\s*(.*)$', 'im');
+    const m = block.match(re);
+    return m ? m[1].trim() : '';
+  }
 
-  function loadSlot(n){
-    return Promise.all([
-      fetchText(`content/menu/slot-${n}-de.txt`),
-      fetchText(`content/menu/slot-${n}-en.txt`),
-      fetchText(`content/menu/slot-${n}-alt-de.txt`),
-      fetchText(`content/menu/slot-${n}-alt-en.txt`)
-    ]).then(([de, en, altDe, altEn]) => ({ n, de, en, altDe, altEn }));
+  // ---------- Daily menu (single consolidated file) ----------
+  let menuDate = '';
+  let menuDateIsStale = false;
+
+  function parseMenuDate(rawDateStr){
+    // Expects DD.MM.YYYY. Silently gives up comparison if format differs —
+    // the date still displays as typed either way.
+    const m = rawDateStr.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+    if(!m) return;
+    const entered = new Date(+m[3], +m[2] - 1, +m[1]);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    entered.setHours(0,0,0,0);
+    menuDateIsStale = entered.getTime() !== today.getTime();
+  }
+
+  function parseMenuFile(text){
+    const dateRaw = getField(text, 'Datum');
+    menuDate = dateRaw;
+    if(dateRaw) parseMenuDate(dateRaw);
+    const blocks = text.split(/---\s*MENU\s*\d+\s*---/i).slice(1);
+    return blocks.map((block, i) => ({
+      n: i + 1,
+      image: getField(block, 'Bild'),
+      titleDe: getField(block, 'Titel DE'),
+      titleEn: getField(block, 'Titel EN'),
+      descDe: getField(block, 'Beschreibung DE'),
+      descEn: getField(block, 'Beschreibung EN')
+    }));
   }
 
   function renderCarousel(){
+    const dateEl = document.getElementById('menu-date');
+    if(menuDate && siteData){
+      const prefix = siteData[currentLang].menu_date_prefix || '';
+      dateEl.textContent = prefix + ' ' + menuDate + (menuDateIsStale ? ' •' : '');
+      dateEl.style.display = 'block';
+      dateEl.title = menuDateIsStale
+        ? (currentLang === 'de' ? 'Bitte Aktualität prüfen' : 'Please double-check this is current')
+        : '';
+    } else {
+      dateEl.style.display = 'none';
+    }
+
     const track = document.getElementById('carousel-track');
     const dots = document.getElementById('carousel-dots');
     const emptyNote = document.getElementById('menu-empty-note');
-    const active = slidesData.filter(s => s.de || s.en);
+    const active = menuItems.filter(m => m.titleDe || m.titleEn);
+
+    track.textContent = '';
+    dots.textContent = '';
 
     if(active.length === 0){
-      track.innerHTML = '';
-      dots.innerHTML = '';
       document.getElementById('swipe-hint').style.display = 'none';
       emptyNote.style.display = 'block';
       emptyNote.textContent = currentLang === 'de'
@@ -392,20 +491,46 @@ unabhängig vom Geldbeutel</div>
     emptyNote.style.display = 'none';
     document.getElementById('swipe-hint').style.display = active.length > 1 ? 'block' : 'none';
 
-    track.innerHTML = active.map(s => {
-      const caption = (currentLang === 'de' ? s.de : s.en) || s.de || s.en;
-      const alt = (currentLang === 'de' ? s.altDe : s.altEn) || s.altDe || s.altEn || caption;
-      return `
-        <div class="menu-card">
-          <img src="content/menu/slot-${s.n}.jpg" alt="${alt.replace(/"/g,'&quot;')}"
-               onerror="this.outerHTML='<div class=&quot;placeholder&quot;>${(currentLang==='de'?'Foto folgt':'Photo coming soon').replace(/"/g,'&quot;')}</div>'">
-          <div class="menu-card-body"><p class="menu-title">${caption}</p><p class="menu-desc">${alt}</p></div>
-        </div>`;
-    }).join('');
+    active.forEach((item, i) => {
+      const title = (currentLang === 'de' ? item.titleDe : item.titleEn) || item.titleDe || item.titleEn;
+      const desc = (currentLang === 'de' ? item.descDe : item.descEn) || item.descDe || item.descEn || '';
 
-    dots.innerHTML = active.map((_,i) => `<span class="${i===0?'active':''}"></span>`).join('');
+      const card = document.createElement('div');
+      card.className = 'menu-card';
 
-    // Update dots on scroll
+      if(item.image){
+        const img = document.createElement('img');
+        img.src = 'content/menu/' + item.image;
+        img.alt = title; // set via property, never parsed as markup — safe with any characters
+        img.addEventListener('error', () => {
+          const ph = document.createElement('div');
+          ph.className = 'placeholder';
+          ph.textContent = currentLang === 'de' ? 'Foto folgt' : 'Photo coming soon';
+          img.replaceWith(ph);
+        });
+        card.appendChild(img);
+      }
+
+      const body = document.createElement('div');
+      body.className = 'menu-card-body';
+      const p1 = document.createElement('p');
+      p1.className = 'menu-title';
+      p1.textContent = title;
+      body.appendChild(p1);
+      if(desc){
+        const p2 = document.createElement('p');
+        p2.className = 'menu-desc';
+        p2.textContent = desc;
+        body.appendChild(p2);
+      }
+      card.appendChild(body);
+      track.appendChild(card);
+
+      const dot = document.createElement('span');
+      if(i === 0) dot.className = 'active';
+      dots.appendChild(dot);
+    });
+
     const dotEls = dots.querySelectorAll('span');
     track.onscroll = () => {
       const idx = Math.round(track.scrollLeft / (track.firstElementChild.offsetWidth + 16));
@@ -413,8 +538,46 @@ unabhängig vom Geldbeutel</div>
     };
   }
 
-  Promise.all(Array.from({length: SLOT_COUNT}, (_, i) => loadSlot(i + 1)))
-    .then(results => { slidesData = results; renderCarousel(); });
+  fetchText('content/menu.txt').then(text => {
+    menuItems = parseMenuFile(text);
+    renderCarousel();
+  });
+
+  // ---------- Announcement (single optional block) ----------
+  function renderAnnouncement(){
+    const section = document.getElementById('announcement-section');
+    if(!announcement){ section.style.display = 'none'; return; }
+
+    const title = (currentLang === 'de' ? announcement.titleDe : announcement.titleEn) || announcement.titleDe || announcement.titleEn;
+    const text = (currentLang === 'de' ? announcement.textDe : announcement.textEn) || announcement.textDe || announcement.textEn;
+
+    if(!title && !text){ section.style.display = 'none'; return; }
+
+    section.style.display = 'block';
+    document.getElementById('announcement-title').textContent = title;
+    document.getElementById('announcement-text').textContent = text;
+    const img = document.getElementById('announcement-image');
+    if(announcement.image){
+      img.style.display = '';
+      img.src = 'content/' + announcement.image;
+      img.alt = title;
+    } else {
+      img.style.display = 'none';
+    }
+  }
+
+  fetchText('content/announcement.txt').then(text => {
+    if(text.trim()){
+      announcement = {
+        image: getField(text, 'Bild'),
+        titleDe: getField(text, 'Titel DE'),
+        titleEn: getField(text, 'Titel EN'),
+        textDe: getField(text, 'Text DE'),
+        textEn: getField(text, 'Text EN')
+      };
+    }
+    renderAnnouncement();
+  });
 
   // Fade the swipe hint after a few seconds
   setTimeout(() => {

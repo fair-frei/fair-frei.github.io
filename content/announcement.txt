@@ -1,0 +1,5 @@
+Bild: announcement.jpg
+Titel DE: Heute bis 18 Uhr geöffnet
+Titel EN: Open today until 6pm
+Text DE: Wir freuen uns auf euren Besuch — komm gerne vorbei!
+Text EN: We'd love to see you — come by any time today!

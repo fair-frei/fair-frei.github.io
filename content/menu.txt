@@ -1,0 +1,69 @@
+# Fair&Frei — Tagesangebot / Today's menu
+#
+# Bis zu 5 Gerichte möglich. Wie viele Karussell-Karten angezeigt werden,
+# hängt nur davon ab, wie viele "Titel"-Felder unten ausgefüllt sind.
+# Up to 5 dishes possible. However many "Titel" fields are filled in below
+# is exactly how many carousel cards will show — this is fully dynamic.
+#
+# Pro Gericht:
+#   Titel DE / Titel EN   -> PFLICHT. Ohne Titel wird dieses Gericht nicht
+#                            angezeigt. Es reicht, nur eine Sprache
+#                            auszufüllen, am besten aber beide.
+#                            REQUIRED. No title = this dish stays hidden.
+#                            Filling in just one language is enough, but
+#                            both is better.
+#   Bild                  -> optional. Dateiname des Fotos (z.B. menu1.jpg).
+#                            Leer lassen = keine Foto-Anzeige für dieses
+#                            Gericht (auch kein Platzhalter).
+#                            optional. Photo filename (e.g. menu1.jpg).
+#                            Leave empty = no photo shown for this dish at
+#                            all (not even a placeholder).
+#   Beschreibung DE/EN    -> optional. Kurzer Zusatztext unter dem Titel.
+#                            optional. Short extra line under the title.
+#
+# Um ein Gericht auszublenden: einfach Titel DE und Titel EN leer lassen.
+# To hide a dish: just leave Titel DE and Titel EN empty.
+#
+# WICHTIG — Datum: Bitte bei jeder Aktualisierung des Menüs auch das Datum
+# unten anpassen (Format TT.MM.JJJJ), damit Besucher sehen, dass die Karte
+# aktuell ist. Ohne aktuelles Datum wirkt das Angebot schnell veraltet.
+# IMPORTANT — Date: please update the date below (format DD.MM.YYYY) every
+# time you update the menu, so visitors can see it's current. Without an
+# up-to-date date, the menu can look stale even when it isn't.
+
+Datum: 04.08.2026
+
+--- MENU 1 ---
+Bild: menu1.jpg
+Titel DE: Kürbis-Kokos-Suppe
+Titel EN: Pumpkin coconut soup
+Beschreibung DE: mit frischem Koriander
+Beschreibung EN: with fresh coriander
+
+--- MENU 2 ---
+Bild: menu2.jpg
+Titel DE: Bunte Bio-Bowl mit Kichererbsen
+Titel EN: Colorful organic bowl with chickpeas
+Beschreibung DE: mit Rotkohl und Gemüse der Saison
+Beschreibung EN: with red cabbage and seasonal vegetables
+
+--- MENU 3 ---
+Bild: 
+Titel DE: 
+Titel EN: 
+Beschreibung DE: 
+Beschreibung EN: 
+
+--- MENU 4 ---
+Bild: 
+Titel DE: 
+Titel EN: 
+Beschreibung DE: 
+Beschreibung EN: 
+
+--- MENU 5 ---
+Bild: 
+Titel DE: 
+Titel EN: 
+Beschreibung DE: 
+Beschreibung EN: 

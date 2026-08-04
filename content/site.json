@@ -1,13 +1,16 @@
 {
   "de": {
     "lang_label": "EN",
+    "brand_tagline": "Bio-Café",
+    "whatsapp_label": "WhatsApp-Gruppe",
+    "whatsapp_caption": "Erfahre als Erste(r) von Schließtagen & neuem Menü",
     "hero_tagline_1": "Du entscheidest,",
     "hero_tagline_2": "was es dir wert ist.",
     "hero_subtitle": "Bio. Regional. Mit Herz.",
-    "hero_badge": "FÜR ALLE\nunabhängig vom Geldbeutel",
     "hero_cta": "Komm vorbei",
     "menu_kicker": "Heute bei uns",
     "menu_title": "Unser Angebot",
+    "menu_date_prefix": "Menü vom",
     "menu_swipe_hint": "← wischen →",
     "intro_kicker": "Unser Leitbild",
     "intro_heading": "Ein Ort der Begegnung",
@@ -45,13 +48,16 @@
   },
   "en": {
     "lang_label": "DE",
+    "brand_tagline": "Organic Café",
+    "whatsapp_label": "WhatsApp Group",
+    "whatsapp_caption": "Be the first to know about closures & menu updates",
     "hero_tagline_1": "You decide",
     "hero_tagline_2": "what it's worth to you.",
     "hero_subtitle": "Organic. Local. From the heart.",
-    "hero_badge": "FOR EVERYONE\nregardless of your wallet",
     "hero_cta": "Come visit",
     "menu_kicker": "Today at our café",
     "menu_title": "What's on offer",
+    "menu_date_prefix": "Menu for",
     "menu_swipe_hint": "← swipe →",
     "intro_kicker": "Our mission",
     "intro_heading": "A place to meet",
@@ -86,5 +92,6 @@
     "address_line5": "Next to the owl",
     "footer_text": "Love, peace and joy",
     "footer_signature": "Your head chef Siniša Shyam and the whole team"
-  }
+  },
+  "whatsapp_url": "https://chat.whatsapp.com/KEG9UjIH6K86WVswrEtpsH"
 }

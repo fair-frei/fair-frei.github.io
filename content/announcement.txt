@@ -1,5 +1,5 @@
 Bild: announcement.jpg
-Titel DE: Heute bis 18 Uhr geöffnet
-Titel EN: Open today until 6pm
-Text DE: Wir freuen uns auf euren Besuch — komm gerne vorbei!
-Text EN: We'd love to see you — come by any time today!
+Titel DE: Schedule
+Titel EN: 
+Text DE: Der erste Kochkurs findet am Samstag, den 08.08., von 15 bis 18 Uhr statt. Danach machen wir jede Woche zur gleichen Zeit weiter.
+Text EN:

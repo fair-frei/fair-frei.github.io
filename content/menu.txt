@@ -35,35 +35,16 @@ Datum: 04.08.2026
 
 --- MENU 1 ---
 Bild: menu1.jpg
-Titel DE: Kürbis-Kokos-Suppe
-Titel EN: Pumpkin coconut soup
-Beschreibung DE: mit frischem Koriander
-Beschreibung EN: with fresh coriander
+Titel DE: Südindisches Brokkoli-Kokos-Gericht
+Titel EN: South Indian Broccoli Coconut Dish
+Beschreibung DE: mit Chana Dhal mit Zucchini, Dattel-Tamarinden-Chutney, geröstetem Buchweizen und Flachreis
+Beschreibung EN: with zucchini chana dal, date-tamarind chutney, roasted buckwheat, and flattened rice
 
 --- MENU 2 ---
 Bild: menu2.jpg
-Titel DE: Bunte Bio-Bowl mit Kichererbsen
-Titel EN: Colorful organic bowl with chickpeas
-Beschreibung DE: mit Rotkohl und Gemüse der Saison
-Beschreibung EN: with red cabbage and seasonal vegetables
+Titel DE: Apfel-Crumble mit Eis
+Titel EN: Apple Crumble with Ice Cream
+Beschreibung DE: warmer Apfel-Crumble serviert mit einer Kugel Eis
+Beschreibung EN: warm apple crumble served with a scoop of ice cream
 
---- MENU 3 ---
-Bild: 
-Titel DE: 
-Titel EN: 
-Beschreibung DE: 
-Beschreibung EN: 
 
---- MENU 4 ---
-Bild: 
-Titel DE: 
-Titel EN: 
-Beschreibung DE: 
-Beschreibung EN: 
-
---- MENU 5 ---
-Bild: 
-Titel DE: 
-Titel EN: 
-Beschreibung DE: 
-Beschreibung EN: 

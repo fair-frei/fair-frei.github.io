@@ -47,4 +47,3 @@ Titel EN: Apple Crumble with Ice Cream
 Beschreibung DE: warmer Apfel-Crumble serviert mit einer Kugel Eis
 Beschreibung EN: warm apple crumble served with a scoop of ice cream
 
-
